@@ -1,0 +1,21 @@
+.user_list {
+
+    background-color: mintcream;
+
+
+    h1 {
+        text-align: center;
+        color: royalblue;
+    }
+
+    li {
+        list-style-type: none;
+        .user_id {
+            color: blue;
+        }
+
+        .user_info{
+            color: navy;
+        }
+    }
+}
