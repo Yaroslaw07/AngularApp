@@ -1,0 +1,25 @@
+<div>
+    <form (ngSubmit)="addUser(); addUserForm.reset();" #addUserForm>
+        <input
+        [(ngModel)] = "formData.name"
+        name="name"
+        #nameUser="ngModel"
+        required>
+        <input
+        [(ngModel)] = "formData.username"
+        name = "username"
+        #userName = "ngModel"
+        required
+        >
+        <input
+        [(ngModel)] = "formData.email"
+        name = "email"
+        #email = "ngModel"
+        required
+        >
+        <button [disabled]="nameUser.invalid || userName.disabled || email.disabled" type='submit'>ADD</button>
+        <div class="Invalid" *ngIf="nameUser.dirty && nameUser.invalid"> Name isn't correct</div>
+        <div class="Invalid" *ngIf="userName.dirty && userName.invalid"> Username isn't correct</div>
+        <div class="Invalid" *ngIf="email.dirty && email.invalid"> Email isn't correct</div>
+    </form>
+</div>

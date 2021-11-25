@@ -1,9 +1,10 @@
 <div class="user_list">
     <h1>List of users</h1>
-<ul>
-    <li *ngFor="let user of users">
-        <pre><span class = "user_id">{{user.id}}</span> <span class = "user_info">{{user.name}}, {{user.username}}
- {{user.email}}</span></pre>
-    </li>
-</ul>
+    <app-add-user (add)="addUser($event)" ></app-add-user>
+    <app-user-item *ngFor="let user of users" 
+    [user] = "user"
+    (edit)="editUser(user.id, $event)"
+    (remove)="removeUser(user.id)"
+    >
+    </app-user-item>
 </div>

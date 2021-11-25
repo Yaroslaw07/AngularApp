@@ -1,0 +1,16 @@
+<div class = "user">
+    <span class = "user_id">{{user.id}}</span> 
+    <b *ngIf="!editMode else editInput"> 
+        <span class = "user_info">{{user.name}}, {{user.username}}
+        {{user.email}}</span>
+    </b>
+ <button (click)="removeUser()">❌</button>
+ <button (click)="startEditMode()">✏️</button>
+</div>
+
+<ng-template #editInput>
+    <input [(ngModel)] = "user.name">
+    <input [(ngModel)] = "user.username">
+    <input [(ngModel)] = "user.email">
+    <button (click)="editItem()">✔</button>
+</ng-template>
