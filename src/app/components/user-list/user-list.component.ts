@@ -34,7 +34,7 @@ export class UserListComponent implements OnInit {
   }
 
   addUser(newUser: User){
-    this.service.addUser(newUser)
+    this.service.addUser(newUser)  
       .subscribe(() => 
           {
             this.users = [newUser,... this.users]

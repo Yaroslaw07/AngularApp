@@ -9,7 +9,7 @@ import { User } from 'src/app/services/user-list.service';
 export class AddUserComponent {
   
   formData = {
-    name: '',
+    nameUser: '',
     username: '',
     email:''
   };
@@ -20,7 +20,7 @@ export class AddUserComponent {
     const user: User = {
       userId: 0,
       id: Math.random() * 1000,
-      name: this.formData.name,
+      name: this.formData.nameUser,
       username: this.formData.username,
       email: this.formData.email
     };
